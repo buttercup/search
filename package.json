@@ -1,0 +1,28 @@
+{
+  "name": "@buttercup/search",
+  "version": "0.0.0",
+  "description": "Vault searching components",
+  "main": "source/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buttercup/search.git"
+  },
+  "keywords": [
+    "buttercup",
+    "vault",
+    "search",
+    "find"
+  ],
+  "author": "Perry Mitchell <perry@perrymitchell.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/buttercup/search/issues"
+  },
+  "homepage": "https://github.com/buttercup/search#readme",
+  "dependencies": {
+    "fuse.js": "^3.4.5"
+  }
+}
