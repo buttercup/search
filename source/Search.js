@@ -1,4 +1,5 @@
-const EventEmitter = require("events");
+const Fuse = require("fuse.js");
+const EventEmitter = require("eventemitter3");
 const deepEqual = require("deep-equal");
 const debounce = require("debounce");
 
@@ -13,6 +14,7 @@ class Search extends EventEmitter {
      * @memberof Search
      */
     constructor(entryItems) {
+        super();
         this._items = entryItems;
         this._cachedTerm = "";
         this._cachedFuseOpts = null;
@@ -26,6 +28,10 @@ class Search extends EventEmitter {
          * @memberof Search
          */
         this.update = debounce(this._update.bind(this), 175);
+    }
+
+    search(term) {
+        return this._getFuse().search(term);
     }
 
     _getFuse() {
