@@ -5,8 +5,17 @@
   "main": "source/index.js",
   "scripts": {
     "docs": "jsdoc2md source/**/*.js > API.md",
-    "test": "npm run test:specs",
+    "format": "prettier --write '{source,test}/**/*.js'",
+    "precommit": "lint-staged",
+    "test": "npm run test:specs && npm run test:format",
+    "test:format": "prettier-check '{source,test}/**/*.js'",
     "test:specs": "nyc mocha -r test/index.js test/specs/**/*.spec.js"
+  },
+  "lint-staged": {
+    "{source,test}/**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,9 +44,13 @@
     "@buttercup/facades": "^1.6.0",
     "buttercup": "^3.0.0-rc3.2",
     "chai": "^4.2.0",
+    "husky": "^4.2.3",
     "jsdoc-to-markdown": "^5.0.3",
+    "lint-staged": "^10.0.8",
     "mocha": "^7.1.0",
     "nyc": "^15.0.0",
+    "prettier": "^1.19.1",
+    "prettier-check": "^2.0.0",
     "sinon": "^9.0.0"
   }
 }
