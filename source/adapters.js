@@ -50,8 +50,8 @@ function extractEntriesFromArchiveFacade(archive) {
         id: entry.id,
         groupID: entry.parentID,
         properties: entry.fields.map(field => ({
-                property: field.property,
-                value: field.value
+            property: field.property,
+            value: field.value
         }))
     }));
 }
