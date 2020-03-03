@@ -6,6 +6,7 @@ const debounce = require("debounce");
 /**
  * Search class for searching entries
  * @augments EventEmitter
+ * @memberof module:ButtercupSearch
  */
 class Search extends EventEmitter {
     /**
@@ -30,6 +31,12 @@ class Search extends EventEmitter {
         this.update = debounce(this._update.bind(this), 175);
     }
 
+    /**
+     * Search using a term (sync)
+     * @param {String} term The search term
+     * @returns {Array.<SearchEntry>}
+     * @memberof Search
+     */
     search(term) {
         return this._getFuse().search(term);
     }

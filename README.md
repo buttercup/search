@@ -40,3 +40,5 @@ search.on("results", evt => {
 });
 search.update("some term");
 ```
+
+Check out the [API documentation](API.md) for more information.

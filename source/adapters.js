@@ -15,6 +15,7 @@
  * Extract all search entries from an archive
  * @param {Archive} archive Buttercup archive instance
  * @returns {SearchEntry[]} An array of search entries
+ * @memberof module:ButtercupSearch
  */
 function extractEntriesFromArchive(archive) {
     const entries = (function getEntries(target) {
@@ -44,6 +45,7 @@ function extractEntriesFromArchive(archive) {
  * Extract all search entries from an archive facade object
  * @param {Object} archive The archive facade object
  * @returns {SearchEntry[]} An array of search entries
+ * @memberof module:ButtercupSearch
  */
 function extractEntriesFromArchiveFacade(archive) {
     return archive.entries.map(entry => ({
