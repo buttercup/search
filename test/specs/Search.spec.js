@@ -7,15 +7,18 @@ describe("Search", function() {
         beforeEach(function() {
             this.archive = new Archive();
             const main = this.archive.createGroup("Main");
-            this.entry1 = main.createEntry("test1")
+            this.entry1 = main
+                .createEntry("test1")
                 .setProperty("username", "user1")
                 .setProperty("password", "password1")
                 .setProperty("extra", "red");
-            this.entry2 = main.createEntry("test2")
+            this.entry2 = main
+                .createEntry("test2")
                 .setProperty("username", "user2")
                 .setProperty("password", "password2")
                 .setProperty("extra", "blue-ish");
-            this.entry3 = main.createEntry("test3")
+            this.entry3 = main
+                .createEntry("test3")
                 .setProperty("username", "user3")
                 .setProperty("password", "password3")
                 .setProperty("extra", "blue");

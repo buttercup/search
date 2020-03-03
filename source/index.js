@@ -1,7 +1,4 @@
-const {
-    extractEntriesFromArchive,
-    extractEntriesFromArchiveFacade
-} = require("./adapters.js");
+const { extractEntriesFromArchive, extractEntriesFromArchiveFacade } = require("./adapters.js");
 const Search = require("./Search.js");
 
 /**

@@ -49,9 +49,7 @@ class Search extends EventEmitter {
             distance: this.distance,
             maxPatternLength: 32,
             minMatchCharLength: 1,
-            keys: [
-              "properties.value"
-            ]
+            keys: ["properties.value"]
         };
         if (this._fuse && deepEqual(this._cachedFuseOpts, fuseOptions)) {
             return this._fuse;

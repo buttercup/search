@@ -22,13 +22,7 @@ function extractEntriesFromArchive(archive) {
         const base = target.getEntries ? target.getEntries() : [];
         return [
             ...base,
-            ...target.getGroups().reduce(
-                (output, group) => [
-                    ...output,
-                    ...getEntries(group)
-                ],
-                []
-            )
+            ...target.getGroups().reduce((output, group) => [...output, ...getEntries(group)], [])
         ];
     })(archive);
     return entries.map(entry => ({
