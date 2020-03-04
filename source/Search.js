@@ -32,7 +32,18 @@ class Search extends EventEmitter {
     }
 
     /**
-     * Search using a term (sync)
+     * Array of items
+     * @readonly
+     * @type {Array.<SearchEntry>}
+     * @memberof Search
+     */
+    get items() {
+        return this._items;
+    }
+
+    /**
+     * Search using a term (sync) - It's best to use
+     * `Search#update` instead for performance
      * @param {String} term The search term
      * @returns {Array.<SearchEntry>}
      * @memberof Search
@@ -55,12 +66,12 @@ class Search extends EventEmitter {
             return this._fuse;
         }
         this._cachedFuseOpts = fuseOptions;
-        this._fuse = new Fuse(this._items, fuseOptions);
+        this._fuse = new Fuse(this.items, fuseOptions);
         return this._fuse;
     }
 
     _update(term) {
-        const results = this._getFuse().search(term);
+        const results = this.search(term);
         this.emit("results", {
             results,
             term

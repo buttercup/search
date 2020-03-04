@@ -40,6 +40,7 @@
     "debounce": "^1.2.0",
     "deep-equal": "^1.1.0",
     "eventemitter3": "^4.0.0",
+    "extract-domain": "^2.2.1",
     "fuse.js": "^3.4.5"
   },
   "devDependencies": {
@@ -55,5 +56,8 @@
     "prettier": "^1.19.1",
     "prettier-check": "^2.0.0",
     "sinon": "^9.0.0"
+  },
+  "peerDependencies": {
+    "buttercup": ">= 3.0.0-rc3.2"
   }
 }
